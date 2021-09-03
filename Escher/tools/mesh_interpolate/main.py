@@ -1,12 +1,10 @@
-import sys
-sys.path.append("../../")
-from Geometry import Mesh
-import ArapInterpolate 
+from Escher.Geometry import Mesh
+import Escher.ArapInterpolate 
 from typing import List
 import argparse
 import os
 
-def interpolate_from_paths(src_mesh_path:str, tgt_mesh_path:str, interval:float) -> List[Mesh]:
+def deformation_interpolation(src_mesh_path:str, tgt_mesh_path:str, interval:float) -> List[Mesh]:
     src_mesh = Mesh(src_mesh_path)
     tgt_mesh = Mesh(tgt_mesh_path)
 

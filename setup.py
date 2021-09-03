@@ -11,7 +11,7 @@ setuptools.setup(
     description="A 3D editing and rendering framework",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="",
+    url="https://github.com/sanjeevmk/Escher",
     project_urls={
         "Bug Tracker": "",
     },
@@ -20,7 +20,10 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "Source/Apps/"},
-    packages=setuptools.find_packages(where="Source/Apps/"),
+    packages=setuptools.find_packages(),
+    install_requires=['scipy',
+                      'numpy',
+                      'trimesh'
+                      ],
     python_requires=">=3.6",
 )

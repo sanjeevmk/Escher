@@ -2,11 +2,11 @@
 As Rigid as Possible Interpolation from a pair of Mesh structures
 """
 
-from Geometry import Mesh
+from Escher.Geometry import Mesh
 from typing import List
 import numpy as np
-import GeometryRoutines as geom
-import AlgebraRoutines as alg
+import Escher.GeometryRoutines as geom
+import Escher.AlgebraRoutines as alg
 import logging
 from scipy.linalg import block_diag
 from scipy.spatial.transform import Slerp,Rotation
