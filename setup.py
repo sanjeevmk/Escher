@@ -23,7 +23,8 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=['scipy',
                       'numpy',
-                      'trimesh'
+                      'trimesh',
+                      'scikit-learn'
                       ],
     python_requires=">=3.6",
 )

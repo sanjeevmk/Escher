@@ -17,8 +17,12 @@ class Mesh(trimesh.Trimesh):
     def __init__(self,mesh_path="",vertices=[],faces=[],face_normals=[],vertex_normals=[],**kwargs):
         super(Mesh,self).__init__(vertices=vertices,faces=faces,**kwargs)
         self.mesh_path = mesh_path
-        self.num_vertices = len(vertices)
-        self.num_faces = len(faces)
+
+        if len(vertices)>0 and len(faces)>0:
+            self.num_vertices = len(vertices)
+            self.num_faces = len(faces)
+            super(Mesh,self).__init__(vertices=vertices,faces=faces,process=False,**kwargs)
+
 
     def load(self,**kwargs) -> trimesh.Trimesh:
         """
@@ -32,7 +36,7 @@ class Mesh(trimesh.Trimesh):
         __mesh = trimesh.load_mesh(self.mesh_path,process=False)
         self.num_vertices = len(__mesh.vertices)
         self.num_faces = len(__mesh.faces)
-        super(Mesh,self).__init__(vertices=__mesh.vertices,faces=__mesh.faces,**kwargs)
+        super(Mesh,self).__init__(vertices=__mesh.vertices,faces=__mesh.faces,process=False,**kwargs)
 
     def get_faces_as_matrices(self) -> np.array:
         """
